@@ -14,12 +14,12 @@ const fetchPosts = () => {
 export async function ListOfPost () {
   const posts = await fetchPosts()
 
-  return posts.slice(0, 5).map((post) => (
-    <article key={post.id}>
-      <Link href='/posts/[id]' as={`/posts/${post.id}`}>
-        <h2 style={{ color: '#09f' }}>{post.title}</h2>
-        <p>{post.body}</p>
-        <LikeButton id={post.id} />
+  return posts.slice(0, 5).map(({ id, title, body }) => (
+    <article key={id}>
+      <Link href='/posts/[id]' as={`/posts/${id}`}>
+        <h2 style={{ color: '#09f' }}>{title}</h2>
+        <p>{body}</p>
+        <LikeButton id={id} />
       </Link>
     </article>
   ))

@@ -1,5 +1,5 @@
 export default function Homepage () {
   return (
-    <div>Home</div>
+    <h1>APP NEXTjs 13</h1>
   )
 }
